@@ -35,22 +35,32 @@ const CachedImageContent = ({
   return (
     <>
       {!loaded && <Placeholder />}
-      <img
-        className={`rounded mx-auto ${loaded ? "d-block" : "d-none"}`}
-        src={cachedBlob}
-        loading="lazy"
-        alt={"nft"}
-        style={{
-          width: 150,
-          height: "auto",
-        }}
-        onLoad={() => {
-          setLoaded(true);
-        }}
-        onError={() => {
-          setLoaded(true);
-        }}
-      />
+      <div
+        className={`${loaded ? "d-block" : "d-none"}`}
+        style={{ width: 150 }}
+      >
+        <img
+          className={"rounded mx-auto"}
+          src={cachedBlob}
+          loading="lazy"
+          alt={"nft"}
+          style={{
+            width: 150,
+            height: "auto",
+          }}
+          onLoad={() => {
+            setLoaded(true);
+          }}
+          onError={() => {
+            setLoaded(true);
+          }}
+        />
+        {uri && (
+          <h6 className={"header-pretitle d-flex justify-content-center mt-2"}>
+            <a href={uri}>VIEW ORIGINAL</a>
+          </h6>
+        )}
+      </div>
     </>
   );
 };

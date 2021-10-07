@@ -420,3 +420,8 @@ p.updated-time {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.metadata-json-viewer {
+  overflow-y: auto;
+  height: 450px;
+}

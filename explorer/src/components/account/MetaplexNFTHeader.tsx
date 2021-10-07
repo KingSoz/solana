@@ -18,7 +18,7 @@ export function NFTHeader({
   return (
     <div className="row align-items-begin">
       <div className="col-auto ml-2">
-        <ArtContent metadata={metadata} pubkey={address} preview={false} />
+        <ArtContent metadata={metadata} pubkey={address} />
       </div>
 
       <div className="col mb-3 ml-n3 ml-md-n2 mt-3">
@@ -92,7 +92,11 @@ function getCreatorDropdownItems(creators: Creator[] | null) {
 
   const CreatorEntry = (creator: Creator) => {
     return (
-      <div className={"d-flex align-items-center creator-dropdown-entry"}>
+      <div
+        className={
+          "d-flex align-items-center text-monospace creator-dropdown-entry ml-3 mr-3"
+        }
+      >
         {getVerifiedIcon(creator.verified)}
         <Link
           className="dropdown-item text-monospace creator-dropdown-entry-address"
